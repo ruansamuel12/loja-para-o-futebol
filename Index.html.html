@@ -1,0 +1,323 @@
+
+<html lang="pt-br">
+<head>
+      <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUT_LOJA</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+	  :root {
+            --primary-color:  #000000;
+            --accent-color:   #000000;
+            --background: 	  #696969;
+            --card-bg:        #6959CD;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
+        }
+
+        body {
+            background: var(--background);
+            color: var(--primary-color);
+        }
+
+        header {
+            background: var(--primary-color);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .product-card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image-container {
+            width: 100%;
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background-color:7B68EE;
+        }
+
+        .product-image {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+            text-align: center;
+            flex: 1;
+        }
+
+        .product-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .buy-button {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+        }
+
+        .buy-button:hover {
+            background: #708090;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+        }
+
+        .qr-code {
+            width: 200px;
+            height: 200px;
+            margin: 1rem 0;
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+            color: white;
+        }
+
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .floating-whatsapp:hover {
+            transform: scale(1.1);
+        }
+		</style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>FUT LOJA</h1>
+			<h2>A loja certa para o seu futebol</h2>
+        </div>
+      
+    </header>
+  <nav>
+     
+            </a>
+        </div>
+    </nav>
+    <main>
+        <section class="produtos">
+            <h2>Produtos em Destaque</h2>
+			<h1> chuteiras e societys </h1>
+
+            <div class="produto 1">
+                <img src="https://http2.mlstatic.com/D_NQ_NP_961149-MLB77405380507_072024-O.webp" alt="Chuteira Futsal Umbro Cannon Jr Infantil Pro Original">
+                <h3>Chuteira Futsal Umbro Cannon Jr Infantil Pro Original</h3>
+                <p>R$ 59,00</p>
+                 <button class="buy-button" onclick="showPayment()">Adicionar ao carrinho</button>
+            </div>
+            <div class="produto 2 ">
+                <img src="https://http2.mlstatic.com/D_NQ_NP_947662-MLB77834937210_072024-O.webp" alt="Chuteira Campo Masculina Deportivo Iii adidas">
+                <h3>Chuteira Campo Masculina Deportivo Iii adidas</h3>
+                <p>R$ 150,00</p>
+        <button class="buy-button" onclick="showPayment()">Adicionar ao carrinho</button>
+            </div>
+            <div class="produto 3">
+                <img src="https://http2.mlstatic.com/D_NQ_NP_938092-MLB76361071127_052024-O.webp" alt="Chuteira Infantil Society Líder Y-5 Penalty ">
+                <h3>Chuteira Infantil Society Líder Y-5 Penalty </h3>
+                <p>R$ 149,99</p>
+                 <button class="buy-button" onclick="showPayment()">Adicionar ao carrinho</button>
+            </div>
+			<h1> Bolas de futebol/futsal <h1>
+			   <div class="produto 4">
+                <img src="https://http2.mlstatic.com/D_NQ_NP_851218-MLU73543848880_122023-O.webp" alt="Bola Society Penalty Lider N4 Xxiv Cor Branco Tamanho ÚNICO">
+                <h3>Bola Society Penalty Lider N4 Xxiv Cor Branco Tamanho ÚNICO </h3>
+                <p>R$ 149,99</p>
+                 <button class="buy-button" onclick="showPayment()">Adicionar ao carrinho</button>
+            </div>
+			   <div class="produto 5">
+                <img src="https://http2.mlstatic.com/D_NQ_NP_918231-MLB71184011456_082023-O.webp" alt=" Bola Campo Dalponte 81 Nitro Microfibra Costurada À Mão">
+                <h3>Bola Campo Dalponte 81 Nitro Microfibra Costurada À Mão</h3>
+                <p>R$ 139,90</p>
+                 <button class="buy-button" onclick="showPayment()">Adicionar ao carrinho</button>
+            </div>
+			   <div class="produto 6">
+                <img src="https://http2.mlstatic.com/D_NQ_NP_727420-CBT77573042660_072024-O.webp" alt="Bola De Futebol De Treinamento Nº 5 Da Euro 2024 ">
+                <h3>Bola De Futebol De Treinamento Nº 5 Da Euro 2024 </h3>
+                <p>R$ 134,86</p>
+                 <button class="buy-button" onclick="showPayment()">Adicionar ao carrinho</button>
+            </div> 
+			
+						   <div class="produto 7">
+                <img src="https://http2.mlstatic.com/D_NQ_NP_727263-MLB80828036545_112024-O.webp" alt="Meia Esportiva Antiderrapante Tipo Trusox - Entrega Imediata">
+                <h3>Meia Esportiva Antiderrapante Tipo Trusox - Entrega Imediata </h3>
+                <p>R$ 14,99</p>
+                 <button class="buy-button" onclick="showPayment()">Adicionar ao carrinho</button>
+            </div>
+			   <div class="produto 8">
+                <img src="https://http2.mlstatic.com/D_NQ_NP_660960-MLB79789666450_102024-O.webp" alt="Meia Antiderrapante Esportiva Futebol Treino ">
+                <h3>Meia Antiderrapante Esportiva Futebol Treino</h3>
+                <p>R$ 13,75</p>
+                 <button class="buy-button" onclick="showPayment()">Adicionar ao carrinho</button>
+            </div>
+			   <div class="produto 9">
+                <img src="https://http2.mlstatic.com/D_Q_NP_2X_776950-MLB78191776441_082024-E.webp" alt="Meião De Futebol Flamengo Infantil/juvenil - Oficial ">
+                <h3>Meião De Futebol Flamengo Infantil/juvenil - Oficial</h3>
+                <p>R$ 32,80</p>
+				
+                 <button class="buy-button" onclick="showPayment()">Adicionar ao carrinho</button>
+            </div>
+			<h1> Camisas de times da série A do Brasileirão </h1>
+			  <div class="produto 10">
+                <img src="https://http2.mlstatic.com/D_NQ_NP_704310-MLB79556827792_102024-O.webp" alt="Camisa Flamengo Infantil Juvenil Zico Retrô Oficial
+ ">
+                <h3>Camisa Flamengo Infantil Juvenil Zico Retrô Oficial
+ </h3>
+                <p>R$ 134,86</p>
+                 <button class="buy-button" onclick="showPayment()">Adicionar ao carrinho</button>
+            </div>
+			   <div class="produto 11">
+                <img src="https://http2.mlstatic.com/D_NQ_NP_663027-MLB80357015113_102024-O.webp" alt="Camisa Santos Azul Retro 2011 Neymar">
+                <h3>Camisa Santos Azul Retro 2011 Neymar</h3>
+                <p>R$ 139,99</p>
+                 <button class="buy-button" onclick="showPayment()">Adicionar ao carrinho</button>
+            </div>
+			   <div class="produto 12">
+                <img src="https://http2.mlstatic.com/D_NQ_NP_862865-MLB78866711384_092024-O.webp" alt="Camisa Reebok Botafogo Masculina I Torcedor 24/25 - Partida ">
+                <h3>Camisa Reebok Botafogo Masculina I Torcedor 24/25 - Partida</h3>
+                <p>R$ 157,75</p>
+			
+                 <button class="buy-button" onclick="showPayment()">Adicionar ao carrinho</button>
+            </div>
+			        </section>
+    </main>
+<div class="modal" id="paymentModal">
+        <button class="close-modal" onclick="closeModal()">&times;</button>
+        <div class="modal-content">
+            <h2>Pagamento via PIX:</h2>
+            <img src="qrcode-pix.PNG" class="qr-code">
+            <p>Chave PIX por e-mail: tecamaria98@gmail.com</p>
+        </div>
+    </div>
+    <a href="https://wa.me/5592993577350" class="floating-whatsapp" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <script>
+        function showPayment() {
+            document.getElementById("paymentModal").style.display = "flex";
+        }
+
+        function closeModal() {
+            document.getElementById("paymentModal").style.display = "none";
+        }
+    </script>
+    <footer>
+	<p> Por Ruan Samuel </p>
+        <p>&copy; 2024 Minha Loja Virtual | Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
